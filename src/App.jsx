@@ -1,33 +1,36 @@
-
-import React from "react";
 import './App.css';
 import elephant from "./images/elephant.jpeg";
+import React from "react";
 
 
 
 function App({imageData}) {
-  let image_arr=image()
-  console.log(image_arr)
-  return (
-   <div>
-     <h1>Kalvium Gallery</h1>
-    {/* <div className='parent'>
-      <img src={image_arr[0].img} className='image'/>
-      <img src={image_arr[0].img} className='image'/>
-      <img src={image_arr[0].img} className='image'/>
-      <img src={image_arr[0].img} className='image'/>
-    </div> */}
-    <div className='parent'>
-    {
-      image_arr.map(elem=>{
-        return(
-          <img className='image' src={elem.img}/>
-        )
-      })
-    }
 
+  let image_arr = imageData()
+
+  return (
+    <div>
+      <h1>Kalvium Gallery</h1>
+      {/* <div className="parent_div">
+        <img src={image_arr[0].img} alt=""/>
+        <img src={image_arr[1].img} alt=""/>
+        <img src={image_arr[2].img} alt=""/>
+        <img src={image_arr[3].img} alt=""/>
+      </div> */}
+
+      <div className='Main_div'>{
+          image_arr.map(elem => {
+            return(
+              <img src={elem.img} />
+            )
+          })
+
+        }  
+
+
+      </div>
+    
     </div>
-   </div>
   )
 }
 
